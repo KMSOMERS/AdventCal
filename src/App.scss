@@ -1,0 +1,162 @@
+$perspective: 850px;
+$present-dimension: 8em;
+$date-dimension: $present-dimension / 4;
+
+@keyframes shake {
+	0% 		{ transform: rotate(0deg); }
+	20% 	{ transform: rotate(-20deg); }
+	40% 	{ transform: rotate(20deg); }
+	60% 	{ transform: rotate(-10deg); }
+	80% 	{ transform: rotate(10deg); }
+	100% 	{ transform: rotate(0deg); }
+}
+
+#root {
+	width: 100%;
+	height: 100%;
+}
+
+html, body {
+	height: 100%;
+	text-align: center;
+}
+
+body {
+	background-color: MediumSeaGreen;
+	display: flex; 
+	align-items: center;
+}
+
+main {
+	text-align: center;
+	margin: 0 auto; 
+	max-width: $present-dimension * 8;
+}
+
+.challenge {
+	color: red;
+}
+
+.joke {
+	color: green
+}
+
+.jokeAnswer {
+	color: green
+}
+
+.present {
+	position: relative;
+	display: inline-block;
+	width: $present-dimension;
+  	height: $present-dimension;
+	margin: .5em;
+	perspective: $perspective; 
+	z-index: 666;
+}
+
+.present_disabled {
+	position: relative;
+	display: inline-block;
+	width: $present-dimension;
+  	height: $present-dimension;
+	margin: .5em;
+	perspective: $perspective; 
+	z-index: 666;
+}
+
+.present__pane, 
+.present__content {
+	width: inherit; height: inherit;
+}
+
+.present__pane_disabled,
+.present__content_disabled {
+	width: inherit; height: inherit;
+}
+
+.present__pane {
+	position: relative;
+	background: linear-gradient(180deg, rgb(250, 44, 62) 50%, rgb(0, 153, 255) 50%);
+	transform-style: preserve-3d;
+	transform-origin: 0;
+	perspective: $perspective; 
+	text-align: center;
+	box-shadow: 0 0 40px 0 rgba(black, .15);
+	cursor: pointer;
+	transition: all .2s ease-out;	
+}
+
+.present__pane_disabled {
+	position: relative;
+	background: linear-gradient(180deg, rgb(48, 48, 48) 50%, rgb(95, 95, 95) 50%);
+	perspective: $perspective; 
+	text-align: center;
+	box-shadow: 0 0 40px 0 rgba(black, .15);
+}
+
+.present__date {
+	position: absolute; 
+	top: 50%; 
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: $date-dimension; 
+	height: $date-dimension;
+	margin: 0; 
+	font-size: 1.5em; 
+	line-height: $date-dimension;
+	background: rgb(0, 12, 74); color: white;
+	border-radius: 50%;
+	box-shadow: inset 0 0 10px 5px rgba(black, 0.15);
+}
+
+.present__date_disabled {
+	position: absolute; 
+	top: 50%; 
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: $date-dimension; 
+	height: $date-dimension;
+	margin: 0; 
+	font-size: 1.5em; 
+	line-height: $date-dimension;
+	background: rgb(185, 185, 185); color: rgb(0, 0, 0);
+	border-radius: 50%;
+	box-shadow: inset 0 0 10px 5px rgba(black, 0.15);
+}
+
+// hover styles
+.present:hover {
+	z-index: 999;
+}
+
+.present:hover .present__pane {  
+	background: linear-gradient(180deg, rgb(250, 44, 62) 50%, rgb(0, 153, 255) 50%);
+	transform: rotateY(-97deg);
+	perspective-origin: 0;
+	transition: all .25s ease-in;
+}
+
+.present:hover .present__date {
+	backface-visibility: hidden; // hide date
+}
+
+.present__content {
+	position: absolute; 
+	top: 0; 
+	left: 0;
+	background: black;
+	text-align: center;
+	box-shadow: 0 0 40px 0 rgba(black, .15), inset 0 0 30px 20px rgba(black, .15);
+	z-index: -1;
+}
+
+.present__content_disabled {
+	position: absolute; 
+	top: 0; 
+	left: 0;
+	background: black;
+	text-align: center;
+	box-shadow: 0 0 40px 0 rgba(black, .15), inset 0 0 30px 20px rgba(black, .15);
+	z-index: -1;
+}
