@@ -2,11 +2,6 @@ $perspective: 850px;
 $present-dimension: 8em;
 $date-dimension: $present-dimension / 4;
 
-@font-face {
-	font-family: "Mountains of Christmas";
-	src: url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap')
-}
-
 @keyframes shake {
 	0% 		{ transform: rotate(0deg); }
 	20% 	{ transform: rotate(-20deg); }
@@ -41,7 +36,6 @@ main {
 }
 
 .header {
-	font-family: 'Mountains of Christmas', cursive;
 	font-size: 8vmin;
 	color: white;
 	font-weight: 700;
@@ -52,7 +46,6 @@ main {
 }
 
 .info {
-	font-family: 'Mountains of Christmas', cursive;
 	font-size: 3vmin;
 	color: rgba(255,0,0,.5);
 	font-weight: 700;
