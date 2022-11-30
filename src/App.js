@@ -411,12 +411,13 @@ function App() {
             }
           }
         }>
+        
         <div className={isEnabled ? "present__pane" : "present__pane_disabled"}>
           <h2 className={isEnabled ? "present__date" : "present__date_disabled"}>{number}</h2>
         </div>
         <div className={isEnabled ? "present__content" : "present__content_disabled"}> 
           <p className={isEnabled ? "present__inside" : "present__inside_disabled"}>
-            Click for activity {number}
+            Click for activity
           </p>
         </div> 
       </article>

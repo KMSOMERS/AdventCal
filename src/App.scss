@@ -14,15 +14,14 @@ $date-dimension: $present-dimension / 4;
 #root {
 	width: 100%;
 	height: 100%;	
-    background-color: #09814A;
-    /* background: linear-gradient(180deg, #121619 0%, #09814A 36.46%, #121413 100%); */
+    background-color: white;
     background-image: linear-gradient(180deg, rgba(18,22,25,0),rgba(9,129,74, 1)), url(https://drive.google.com/uc?export=view&id=1bZvRGy9EtF8ZR77fIhwoNqp_LyaHQacS);
 }
 
 html, body {
 	height: 100%;
 	text-align: center;
-	background-color: #09814A;
+    background-color: white;
 }
 
 body {
@@ -33,8 +32,7 @@ body {
 
 main {
 	text-align: center;
-	margin: 0 auto; 
-	max-width: $present-dimension * 8;
+	margin: 0 auto;
 }
 
 .header {
@@ -103,7 +101,7 @@ main {
 
 .present__pane {
 	position: relative;
-	background: linear-gradient(180deg, rgb(250, 44, 62) 50%, rgb(0, 153, 255) 50%);
+	background: rgb(250, 44, 62) 50%;
 	transform-style: preserve-3d;
 	transform-origin: 0;
 	perspective: $perspective; 
@@ -114,6 +112,32 @@ main {
 	border: 2px solid rgba(black, .7);
 	border-radius: 2px;
 	transition: all .2s ease-out;	
+	/* border */
+	--border: 20; /*only px value */
+	--borderW: calc(var(--border) * 1px);
+	border: var(--borderW) solid red; /*fallback*/
+	border-image-width: var(--borderW);
+	border-image:  
+		repeating-linear-gradient(
+		-45deg, 
+		green 0 calc(var(--borderW) * .5), 
+		white 0 calc(var(--borderW) * 1),
+		red 0 calc(var(--borderW) * 1.5), 
+		white 0 calc(var(--borderW) * 2)
+		) var(--border);
+	position: relative;
+		box-shadow: 
+	inset 0 0 0.25em red,
+	0 0 0.25em gold;
+		
+	.present__pane::after{
+	position: absolute;
+	left: calc(var(--borderW) * -1);
+	top: calc(var(--borderW) * -1);
+	width: 100%;
+	height: 100%;
+	border: var(--borderW) double rgba(255,255,255,0.5);
+	}
 }
 
 .present__pane_disabled {
@@ -134,9 +158,7 @@ main {
 	margin: 0; 
 	font-size: 1.5em; 
 	line-height: $date-dimension;
-	background: rgb(0, 12, 74); color: white;
-	border-radius: 50%;
-	box-shadow: inset 0 0 10px 5px rgba(black, 0.15);
+	color: rgba(black, 0.15);
 }
 
 .present__date_disabled {
@@ -149,7 +171,8 @@ main {
 	margin: 0; 
 	font-size: 1.5em; 
 	line-height: $date-dimension;
-	background: rgb(185, 185, 185); color: rgb(0, 0, 0);
+	background: rgb(185, 185, 185); 
+	color: rgb(0, 0, 0);
 	border-radius: 50%;
 	box-shadow: inset 0 0 10px 5px rgba(black, 0.15);
 }
@@ -160,7 +183,7 @@ main {
 }
 
 .present:hover .present__pane {  
-	background: linear-gradient(180deg, rgb(250, 44, 62) 50%, rgb(0, 153, 255) 50%);
+	background: rgb(250, 44, 62) 50%;
 	transform: rotateY(-97deg);
 	perspective-origin: 0;
 	transition: all .25s ease-in;
@@ -174,8 +197,8 @@ main {
 	position: absolute; 
 	top: 0; 
 	left: 0;
-	background: black;
-	color: white;
+	background: #09814A;
+	color: black;
 	text-align: center;
 	box-shadow: 0 0 40px 0 rgba(black, .15), inset 0 0 30px 20px rgba(black, .15);
 	z-index: -1;
@@ -229,3 +252,275 @@ main {
 	height: 100%;
 	border: var(--borderW) double rgba(255,255,255,0.5);
   }
+
+@media only screen and (max-width: 600px) {
+	$perspective: 850px;
+	$present-dimension: 4em;
+	$date-dimension: $present-dimension / 3;
+
+	@keyframes shake {
+		0% 		{ transform: rotate(0deg); }
+		20% 	{ transform: rotate(-20deg); }
+		40% 	{ transform: rotate(20deg); }
+		60% 	{ transform: rotate(-10deg); }
+		80% 	{ transform: rotate(10deg); }
+		100% 	{ transform: rotate(0deg); }
+	}
+	
+	#root {
+		width: 100%;
+		height: 100%;	
+		background-color: #09814A;
+		/* background: linear-gradient(180deg, #121619 0%, #09814A 36.46%, #121413 100%); */
+		background-image: linear-gradient(180deg, rgba(18,22,25,0),rgba(9,129,74, 1)), url(https://drive.google.com/uc?export=view&id=1bZvRGy9EtF8ZR77fIhwoNqp_LyaHQacS);
+	}
+	
+	html, body {
+		height: 100%;
+		text-align: center;
+		background-color: #09814A;
+	}
+	
+	body {
+		display: flex; 
+		align-items: center;
+		background-color: #09814A;
+	}
+	
+	main {
+		text-align: center;
+		margin: 0 auto;
+	}
+	
+	.header {
+		font-family: 'Mountains of Christmas', cursive;
+		font-size: 10vmin;
+		color: white;
+		font-weight: 700;
+		text-align: center;
+		text-shadow:
+		0.05em 0.05em 0.05em rgba(255,0,0,.5),
+		0.02em 0.02em 0.02em rgba(0,0,0,.5);
+	}
+	
+	.info {
+		font-family: 'Mountains of Christmas', cursive;
+		font-size: 5vmin;
+		color: rgba(255,0,0,.5);
+		font-weight: 700;
+		text-align: center;
+		text-shadow:
+		0.04em 0.04em 0.04em white,
+		0.02em 0.02em 0.02em rgba(0,0,0,.5);
+	}
+	
+	.challenge {
+		color: red;
+	}
+	
+	.joke {
+		color: green
+	}
+	
+	.jokeAnswer {
+		color: green
+	}
+	
+	.present {
+		position: relative;
+		display: inline-block;
+		width: $present-dimension;
+		  height: $present-dimension;
+		margin: .5em;
+		perspective: $perspective; 
+		z-index: 666;
+	}
+	
+	.present_disabled {
+		position: relative;
+		display: inline-block;
+		width: $present-dimension;
+		  height: $present-dimension;
+		margin: .5em;
+		perspective: $perspective; 
+		z-index: 666;
+	}
+	
+	.present__pane, 
+	.present__content {
+		width: inherit; height: inherit;
+	}
+	
+	.present__pane_disabled,
+	.present__content_disabled {
+		width: inherit; height: inherit;
+	}
+	
+	.present__pane {
+		position: relative;
+		background: rgb(250, 44, 62) 50%;
+		transform-style: preserve-3d;
+		transform-origin: 0;
+		perspective: $perspective; 
+		text-align: center;
+		box-shadow: 0 0 40px 0 rgba(black, .4);
+		cursor: pointer;	
+		border-style: solid;
+		border: 2px solid rgba(black, .7);
+		border-radius: 2px;
+		transition: all .2s ease-out;	
+		/* border */
+		--border: 5; /*only px value */
+		--borderW: calc(var(--border) * 1px);
+		border: var(--borderW) solid red; /*fallback*/
+		border-image-width: var(--borderW);
+		border-image:  
+			repeating-linear-gradient(
+			-45deg, 
+			green 0 calc(var(--borderW) * .5), 
+			white 0 calc(var(--borderW) * 1),
+			red 0 calc(var(--borderW) * 1.5), 
+			white 0 calc(var(--borderW) * 2)
+			) var(--border);
+		position: relative;
+			box-shadow: 
+		inset 0 0 0.25em red,
+		0 0 0.25em gold;
+			
+		.present__pane::after{
+		position: absolute;
+		left: calc(var(--borderW) * -1);
+		top: calc(var(--borderW) * -1);
+		width: 100%;
+		height: 100%;
+		border: var(--borderW) double rgba(255,255,255,0.5);
+		}
+	}
+	
+	.present__pane_disabled {
+		position: relative;
+		background: linear-gradient(180deg, rgb(48, 48, 48) 50%, rgb(95, 95, 95) 50%);
+		perspective: $perspective; 
+		text-align: center;
+		box-shadow: 0 0 40px 0 rgba(black, .15);
+	}
+	
+	.present__date {
+		position: absolute; 
+		top: 50%; 
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: $date-dimension; 
+		height: $date-dimension;
+		margin: 0; 
+		font-size: 1.5em; 
+		line-height: $date-dimension;
+		color: black;
+	}
+	
+	.present__date_disabled {
+		position: absolute; 
+		top: 50%; 
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: $date-dimension; 
+		height: $date-dimension;
+		margin: 0; 
+		font-size: 1.5em; 
+		line-height: $date-dimension;
+		background: rgb(185, 185, 185); color: rgb(0, 0, 0);
+		border-radius: 50%;
+		box-shadow: inset 0 0 10px 5px rgba(black, 0.15);
+	}
+	
+	// hover styles
+	.present:hover {
+		z-index: 999;
+	}
+	
+	.present:hover .present__pane {  
+		background: rgb(250, 44, 62) 50%;
+		transform: rotateY(-97deg);
+		perspective-origin: 0;
+		transition: all .25s ease-in;
+	}
+	
+	.present:hover .present__date {
+		backface-visibility: hidden; // hide date
+	}
+	
+	.present__content {
+		position: absolute; 
+		top: 0; 
+		left: 0;
+		background: #09814A;
+		color: black;
+		text-align: center;
+		box-shadow: 0 0 40px 0 rgba(black, .15), inset 0 0 30px 20px rgba(black, .15);
+		z-index: -1;
+		border: 2px dashed black;
+	}
+	
+	.present__content_disabled {
+		position: absolute; 
+		top: 0; 
+		left: 0;
+		background: black;
+		text-align: center;
+		box-shadow: 0 0 40px 0 rgba(black, .15), inset 0 0 30px 20px rgba(black, .15);
+		z-index: -1;
+	}
+	
+	.present__inside {
+		position: absolute; 
+		top: 10%; 
+		left: 10%;
+		width: 80%; 
+		height: 100%;
+		margin-left: 0%;
+		z-index: 0;
+		font-size: small;
+	}
+
+	.present__inside_disabled {
+		position: absolute; 
+		top: 10%; 
+		left: 10%;
+		width: 80%; 
+		height: 100%;
+		margin-left: 0%;
+		z-index: 0;
+		font-size: small;
+		backface-visibility: hidden; // hide date
+	}
+	
+	.candycane-border{ 
+		/* border */
+		--border: 20; /*only px value */
+		--borderW: calc(var(--border) * 1px);
+		border: var(--borderW) solid red; /*fallback*/
+		border-image-width: var(--borderW);
+		border-image:  
+		  repeating-linear-gradient(
+			-45deg, 
+			green 0 calc(var(--borderW) * .5), 
+			white 0 calc(var(--borderW) * 1),
+			red 0 calc(var(--borderW) * 1.5), 
+			white 0 calc(var(--borderW) * 2)
+		  ) var(--border);
+		position: relative;
+		  box-shadow: 
+		inset 0 0 0.25em red,
+		0 0 0.25em gold;
+	  }
+	
+	  .candycane-border::after{
+		position: absolute;
+		left: calc(var(--borderW) * -1);
+		top: calc(var(--borderW) * -1);
+		width: 100%;
+		height: 100%;
+		border: var(--borderW) double rgba(255,255,255,0.5);
+	  }
+}
+
