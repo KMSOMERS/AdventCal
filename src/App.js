@@ -129,7 +129,7 @@ function App() {
         
         <Door 
         number='1' 
-        date='2022-11-30'
+        date='2022-12-01'
         challenge="Decorate your bedroom/house with Christmas decorations - Lots of glitter and lights"
         joke="Why was the little boy so cold on Christmas morning?"
         jokeAnswer="Because it was Decembrrrrr!"
@@ -444,7 +444,6 @@ function App() {
     enabledDay.setHours(0, 0, 0, 0);
 
     return today.getTime() >= enabledDay.getTime();
-   
   }
   
   function Challenge(props) {

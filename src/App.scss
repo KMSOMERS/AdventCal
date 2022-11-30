@@ -2,6 +2,11 @@ $perspective: 850px;
 $present-dimension: 8em;
 $date-dimension: $present-dimension / 4;
 
+@font-face {
+	font-family: "Mountains of Christmas";
+	src: url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap')
+}
+
 @keyframes shake {
 	0% 		{ transform: rotate(0deg); }
 	20% 	{ transform: rotate(-20deg); }
@@ -187,22 +192,6 @@ main {
 	font-size: 1.5em; 
 	line-height: $date-dimension;
 	color: black;
-}
-
-// hover styles
-.present:hover {
-	z-index: 999;
-}
-
-.present:hover .present__pane {  
-	background: rgb(250, 44, 62) 50%;
-	transform: rotateY(-97deg);
-	perspective-origin: 0;
-	transition: all .25s ease-in;
-}
-
-.present:hover .present__date {
-	backface-visibility: hidden; // hide date
 }
 
 .present__content {
@@ -456,22 +445,6 @@ main {
 		font-size: 1.5em; 
 		line-height: $date-dimension;
 		color: black;
-	}
-	
-	// hover styles
-	.present:hover {
-		z-index: 999;
-	}
-	
-	.present:hover .present__pane {  
-		background: rgb(250, 44, 62) 50%;
-		transform: rotateY(-97deg);
-		perspective-origin: 0;
-		transition: all .25s ease-in;
-	}
-	
-	.present:hover .present__date {
-		backface-visibility: hidden; // hide date
 	}
 	
 	.present__content {
