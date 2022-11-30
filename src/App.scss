@@ -31,6 +31,7 @@ body {
 }
 
 main {
+	width: 80%;
 	text-align: center;
 	margin: 0 auto;
 }
@@ -279,10 +280,10 @@ main {
 	main {
 		text-align: center;
 		margin: 0 auto;
+		width: 100%
 	}
 	
 	.header {
-		font-family: 'Mountains of Christmas', cursive;
 		font-size: 10vmin;
 		color: white;
 		font-weight: 700;
@@ -293,7 +294,6 @@ main {
 	}
 	
 	.info {
-		font-family: 'Mountains of Christmas', cursive;
 		font-size: 5vmin;
 		color: rgba(255,0,0,.5);
 		font-weight: 700;
