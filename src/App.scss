@@ -13,24 +13,50 @@ $date-dimension: $present-dimension / 4;
 
 #root {
 	width: 100%;
-	height: 100%;
+	height: 100%;	
+    background-color: #09814A;
+    /* background: linear-gradient(180deg, #121619 0%, #09814A 36.46%, #121413 100%); */
+    background-image: linear-gradient(180deg, rgba(18,22,25,0),rgba(9,129,74, 1)), url(https://drive.google.com/uc?export=view&id=1bZvRGy9EtF8ZR77fIhwoNqp_LyaHQacS);
 }
 
 html, body {
 	height: 100%;
 	text-align: center;
+	background-color: #09814A;
 }
 
 body {
-	background-color: MediumSeaGreen;
 	display: flex; 
 	align-items: center;
+	background-color: #09814A;
 }
 
 main {
 	text-align: center;
 	margin: 0 auto; 
 	max-width: $present-dimension * 8;
+}
+
+.header {
+	font-family: 'Mountains of Christmas', cursive;
+	font-size: 8vmin;
+	color: white;
+	font-weight: 700;
+	text-align: center;
+	text-shadow:
+    0.05em 0.05em 0.05em rgba(255,0,0,.5),
+    0.02em 0.02em 0.02em rgba(0,0,0,.5);
+}
+
+.info {
+	font-family: 'Mountains of Christmas', cursive;
+	font-size: 3vmin;
+	color: rgba(255,0,0,.5);
+	font-weight: 700;
+	text-align: center;
+	text-shadow:
+    0.05em 0.05em 0.05em white,
+    0.02em 0.02em 0.02em rgba(0,0,0,.5);
 }
 
 .challenge {
@@ -82,8 +108,11 @@ main {
 	transform-origin: 0;
 	perspective: $perspective; 
 	text-align: center;
-	box-shadow: 0 0 40px 0 rgba(black, .15);
-	cursor: pointer;
+	box-shadow: 0 0 40px 0 rgba(black, .4);
+	cursor: pointer;	
+	border-style: solid;
+	border: 2px solid rgba(black, .7);
+	border-radius: 2px;
 	transition: all .2s ease-out;	
 }
 
@@ -146,6 +175,7 @@ main {
 	top: 0; 
 	left: 0;
 	background: black;
+	color: white;
 	text-align: center;
 	box-shadow: 0 0 40px 0 rgba(black, .15), inset 0 0 30px 20px rgba(black, .15);
 	z-index: -1;
@@ -160,3 +190,42 @@ main {
 	box-shadow: 0 0 40px 0 rgba(black, .15), inset 0 0 30px 20px rgba(black, .15);
 	z-index: -1;
 }
+
+.present__inside {
+	position: absolute; 
+	top: 30%; 
+	left: 10%;
+	width: 80%; 
+	height: 100%;
+	margin-left: 0%;
+	z-index: 0;
+}
+
+.candycane-border{ 
+	/* border */
+	--border: 20; /*only px value */
+	--borderW: calc(var(--border) * 1px);
+	border: var(--borderW) solid red; /*fallback*/
+	border-image-width: var(--borderW);
+	border-image:  
+	  repeating-linear-gradient(
+		-45deg, 
+		green 0 calc(var(--borderW) * .5), 
+		white 0 calc(var(--borderW) * 1),
+		red 0 calc(var(--borderW) * 1.5), 
+		white 0 calc(var(--borderW) * 2)
+	  ) var(--border);
+	position: relative;
+  	box-shadow: 
+    inset 0 0 0.25em red,
+    0 0 0.25em gold;
+  }
+
+  .candycane-border::after{
+	position: absolute;
+	left: calc(var(--borderW) * -1);
+	top: calc(var(--borderW) * -1);
+	width: 100%;
+	height: 100%;
+	border: var(--borderW) double rgba(255,255,255,0.5);
+  }
