@@ -10,6 +10,7 @@ function App() {
   const [joke, setJoke] = useState("");
   const [jokeAnswer, setJokeAnswer] = useState("");
   const [challenge, setChallenge] = useState("");
+  const [link, setLink] = useState("");
 
   return (
     <>
@@ -32,7 +33,9 @@ function App() {
         setDay={setDay}        
         setChallenge={setChallenge}
         setJoke={setJoke}        
-        setJokeAnswer={setJokeAnswer}
+        setJokeAnswer={setJokeAnswer}        
+        setLink={setLink}
+        link=""
         />
       <Door 
         number='8' 
@@ -46,7 +49,9 @@ function App() {
         setDay={setDay}        
         setChallenge={setChallenge}
         setJoke={setJoke}        
-        setJokeAnswer={setJokeAnswer}
+        setJokeAnswer={setJokeAnswer}        
+        setLink={setLink}
+        link=""
         />
         
         <Door 
@@ -60,9 +65,11 @@ function App() {
         setDay={setDay}        
         setChallenge={setChallenge}
         setJoke={setJoke}        
-        setJokeAnswer={setJokeAnswer}
+        setJokeAnswer={setJokeAnswer}        
+        setLink={setLink}
+        link=""
         />
-                <Door 
+        <Door 
         number='19' 
         date='2022-12-19'
         challenge="Make a snow globe"
@@ -74,6 +81,8 @@ function App() {
         setChallenge={setChallenge}
         setJoke={setJoke}        
         setJokeAnswer={setJokeAnswer}
+        setLink={setLink}
+        link=""
         />
 
       
@@ -95,6 +104,8 @@ function App() {
         setChallenge={setChallenge}
         setJoke={setJoke}        
         setJokeAnswer={setJokeAnswer}
+        setLink={setLink}
+        link=""
         />
       
       <Door 
@@ -110,6 +121,8 @@ function App() {
         setChallenge={setChallenge}
         setJoke={setJoke}        
         setJokeAnswer={setJokeAnswer}
+        setLink={setLink}
+        link=""
         />
         <Door 
         number='3' 
@@ -125,6 +138,8 @@ function App() {
         setChallenge={setChallenge}
         setJoke={setJoke}        
         setJokeAnswer={setJokeAnswer}
+        setLink={setLink}
+        link=""
         />
         
         <Door 
@@ -139,6 +154,8 @@ function App() {
         setChallenge={setChallenge}
         setJoke={setJoke}        
         setJokeAnswer={setJokeAnswer}
+        setLink={setLink}
+        link=""
         />
 
         
@@ -156,6 +173,8 @@ function App() {
         setChallenge={setChallenge}
         setJoke={setJoke}        
         setJokeAnswer={setJokeAnswer}
+        setLink={setLink}
+        link=""
         />
         <Door 
         number='14' 
@@ -170,6 +189,8 @@ function App() {
         setChallenge={setChallenge}
         setJoke={setJoke}        
         setJokeAnswer={setJokeAnswer}
+        setLink={setLink}
+        link=""
         />
 
         <Door 
@@ -188,6 +209,8 @@ function App() {
         setChallenge={setChallenge}
         setJoke={setJoke}        
         setJokeAnswer={setJokeAnswer}
+        setLink={setLink}
+        link=""
         />
         <Door 
         number='7' 
@@ -203,6 +226,8 @@ function App() {
         setChallenge={setChallenge}
         setJoke={setJoke}        
         setJokeAnswer={setJokeAnswer}
+        setLink={setLink}
+        link="https://tinyurl.com/advchristmasquiz"
         />
         <Door 
         number='12' 
@@ -218,6 +243,8 @@ function App() {
         setChallenge={setChallenge}
         setJoke={setJoke}        
         setJokeAnswer={setJokeAnswer}
+        setLink={setLink}
+        link=""
         />        <Door 
         number='22' 
         date='2022-12-22'
@@ -230,6 +257,8 @@ function App() {
         setChallenge={setChallenge}
         setJoke={setJoke}        
         setJokeAnswer={setJokeAnswer}
+        setLink={setLink}
+        link=""
         />
               <Door 
         number='2' 
@@ -249,6 +278,8 @@ function App() {
         setChallenge={setChallenge}
         setJoke={setJoke}        
         setJokeAnswer={setJokeAnswer}
+        setLink={setLink}
+        link=""
         />
                
         <Door 
@@ -263,6 +294,8 @@ function App() {
         setChallenge={setChallenge}
         setJoke={setJoke}        
         setJokeAnswer={setJokeAnswer}
+        setLink={setLink}
+        link=""
         />
        
         <Door 
@@ -281,6 +314,8 @@ function App() {
         setChallenge={setChallenge}
         setJoke={setJoke}        
         setJokeAnswer={setJokeAnswer}
+        setLink={setLink}
+        link=""
         />
         
 
@@ -296,6 +331,8 @@ function App() {
         setChallenge={setChallenge}
         setJoke={setJoke}        
         setJokeAnswer={setJokeAnswer}
+        setLink={setLink}
+        link=""
         />
         <Door 
         number='5' 
@@ -311,6 +348,8 @@ function App() {
         setChallenge={setChallenge}
         setJoke={setJoke}        
         setJokeAnswer={setJokeAnswer}
+        setLink={setLink}
+        link=""
         />
          <Door 
         number='23' 
@@ -328,6 +367,8 @@ function App() {
         setChallenge={setChallenge}
         setJoke={setJoke}        
         setJokeAnswer={setJokeAnswer}
+        setLink={setLink}
+        link=""
         />
          <Door 
         number='16' 
@@ -342,6 +383,8 @@ function App() {
         setChallenge={setChallenge}
         setJoke={setJoke}        
         setJokeAnswer={setJokeAnswer}
+        setLink={setLink}
+        link=""
         />
        <Door 
         number='9' 
@@ -358,6 +401,8 @@ function App() {
         setChallenge={setChallenge}
         setJoke={setJoke}        
         setJokeAnswer={setJokeAnswer}
+        setLink={setLink}
+        link=""
         />
         <Door 
         number='15' 
@@ -373,6 +418,8 @@ function App() {
         setChallenge={setChallenge}
         setJoke={setJoke}        
         setJokeAnswer={setJokeAnswer}
+        setLink={setLink}
+        link=""
         />
 
         <Door 
@@ -391,6 +438,8 @@ function App() {
         setChallenge={setChallenge}
         setJoke={setJoke}        
         setJokeAnswer={setJokeAnswer}
+        setLink={setLink}
+        link=""
         />
         <Door 
         number='25' 
@@ -404,12 +453,14 @@ function App() {
         setChallenge={setChallenge}
         setJoke={setJoke}        
         setJokeAnswer={setJokeAnswer}
+        setLink={setLink}
+        link=""
         />
     </main>
     </>
   );
 
-  function Door({ number, date, challenge, joke, jokeAnswer, modalShow, setModalShow, setDay, setJoke, setChallenge }) {    
+  function Door({ number, date, challenge, joke, jokeAnswer, modalShow, setModalShow, setDay, setJoke, setChallenge, setLink, link }) {    
     const [isEnabled] = useState(IsPastDate(date));
     return (
     <>  
@@ -420,6 +471,7 @@ function App() {
               setJoke(joke)
               setJokeAnswer(jokeAnswer)
               setChallenge(challenge)
+              setLink(link)
             }
           }
         }>
@@ -458,6 +510,7 @@ function App() {
           <h5 className="challenge">
             {challenge}
           </h5>
+          <a href={link}>{ link ? "Click for quiz!" : ""}</a>
           <h5 className="joke">
             {joke}
           </h5>
