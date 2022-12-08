@@ -17,7 +17,7 @@ function App() {
     <Challenge show={modalShow} onHide={() => setModalShow(false)} day={day} challenge={challenge} joke={joke} jokeAnswer={jokeAnswer}/>    
     <main>      
       <h1 className="header">Activity Advent</h1>
-      <h5 className="info">Send a picture participating in an activity to Rachel - 07812278744 and you will be entered into a raffle for a prize. Each activity is one entry!</h5>
+      <h5 className="info">Send a picture participating in an activity to Rachel and you will be entered into a raffle for a prize. Each activity is one entry!</h5>
       <Door 
         number='21' 
         date='2022-12-21'
